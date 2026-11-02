@@ -1,0 +1,152 @@
+/* --- ПЕРЕМЕННЫЕ И БАЗА --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f9f9f9;
+  --text: #111111;
+  --green-dark: #0a2e1d;
+  --mint: #e0f2ec;
+  --primary: #19c37d; /* Яркий зеленый */
+  --coral: #ff6b6b;
+  --border: #e5e5e5;
+  --radius: 24px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Unbounded', sans-serif; /* Современный, широкий шрифт */
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* --- УТИЛИТЫ --- */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 100px 0; }
+.section-bg { background-color: #fff; }
+.section-dark { background-color: var(--green-dark); color: #fff; }
+.section-title { font-size: 2.2rem; margin-bottom: 48px; }
+
+/* --- КНОПКИ --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+.btn:hover { transform: scale(1.02); }
+.btn-black { background-color: var(--text); color: #fff; padding: 12px 24px; }
+.btn-primary { background-color: var(--primary); color: #fff; }
+.btn-primary:hover { background-color: #14a367; }
+.btn-outline { border: 2px solid var(--border); background: transparent; color: var(--text); }
+.btn-outline:hover { border-color: var(--text); }
+.btn-block { width: 100%; }
+
+/* --- ШАПКА --- */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(249, 249, 249, 0.8);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+}
+.header-inner { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+.logo { font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--text); text-decoration: none; }
+.nav { display: flex; gap: 32px; align-items: center; }
+.nav a:not(.btn) { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.95rem; }
+.nav a:not(.btn):hover { color: var(--primary); }
+
+/* --- HERO (Разделенный экран) --- */
+.hero { padding: 160px 0 80px; }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.hero-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 24px; letter-spacing: -1px; }
+.highlight { color: var(--primary); }
+.hero-text p { font-size: 1.2rem; color: #555; margin-bottom: 40px; max-width: 90%; }
+.hero-actions { display: flex; align-items: center; gap: 20px; }
+.hero-note { font-size: 0.9rem; color: #888; }
+.hero-image img { width: 100%; height: 600px; object-fit: cover; border-radius: 40px; }
+
+/* --- BENTO GRID (Сетка преимуществ) --- */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  gap: 20px;
+}
+.bento-item {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+}
+.bento-item h3 { font-size: 1.4rem; margin-bottom: 12px; }
+.bento-item p { color: #555; }
+.bento-large { grid-column: span 2; grid-row: span 2; position: relative; overflow: hidden; background: #fff; }
+.bento-img { position: absolute; bottom: 0; right: 0; width: 50%; height: 80%; object-fit: cover; border-top-left-radius: 40px; }
+.bento-tall { grid-row: span 2; }
+
+/* --- ТАРИФЫ --- */
+.pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.price-box {
+  background: #fff;
+  padding: 48px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  position: relative;
+}
+.price-box-popular { border: 2px solid var(--primary); box-shadow: 0 20px 40px rgba(25, 195, 125, 0.1); }
+.badge { position: absolute; top: -14px; left: 48px; background: var(--primary); color: #fff; padding: 6px 16px; border-radius: 100px; font-size: 0.85rem; font-weight: 600; }
+.price-header h3 { font-size: 1.5rem; margin-bottom: 4px; }
+.price-header p { color: #888; margin-bottom: 24px; }
+.price-value { font-family: 'Unbounded', sans-serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 24px; }
+.price-value span { font-size: 1rem; font-family: 'Inter', sans-serif; color: #888; font-weight: 400; }
+.price-list { list-style: none; margin-bottom: 40px; }
+.price-list li { padding: 10px 0; border-bottom: 1px dashed var(--border); display: flex; align-items: center; }
+.price-list li::before { content: "→"; color: var(--primary); margin-right: 12px; font-weight: bold; }
+
+/* --- CTA + ФОРМА --- */
+.cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.section-dark .section-title { color: #fff; margin-bottom: 20px; }
+.section-dark p { color: rgba(255,255,255,0.7); font-size: 1.1rem; }
+.form { display: flex; flex-direction: column; gap: 16px; }
+.form input { width: 100%; padding: 18px 24px; border-radius: 100px; border: none; background: rgba(255,255,255,0.1); color: #fff; font-size: 1rem; font-family: 'Inter', sans-serif; }
+.form input::placeholder { color: rgba(255,255,255,0.5); }
+.form input:focus { outline: none; background: rgba(255,255,255,0.2); }
+.form-note { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 8px; text-align: center; }
+.success-message { background: var(--primary); padding: 40px; border-radius: var(--radius); text-align: center; color: #fff; }
+.success-message h3 { font-size: 1.5rem; margin-bottom: 8px; }
+
+/* --- ФУТЕР --- */
+.footer { padding: 40px 0; text-align: center; border-top: 1px solid var(--border); color: #888; font-size: 0.9rem; }
+
+/* --- АДАПТИВ --- */
+@media (max-width: 900px) {
+  .hero-grid, .cta-grid, .pricing-grid { grid-template-columns: 1fr; }
+  .hero-image img { height: 400px; }
+  .bento-grid { grid-template-columns: 1fr; }
+  .bento-large, .bento-tall { grid-column: span 1; grid-row: span 1; }
+  .bento-img { display: none; } /* Скрываем картинку на телефонах, чтобы не ломала сетку */
+  .nav { display: none; } /* Прячем меню на телефоне (для простоты) */
+}

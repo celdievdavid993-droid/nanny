@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Зелёная няня — сервис заботы о растениях</title>
+  
+  <!-- Новые шрифты: Unbounded для заголовков, Inter для текста -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ШАПКА -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">🪴 Зелёная няня</a>
+      <nav class="nav">
+        <a href="#how">Как это работает</a>
+        <a href="#prices">Тарифы</a>
+        <a href="#cta" class="btn btn-black">Забронировать</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ГЛАВНЫЙ ЭКРАН (Split layout) -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1>Уезжаете?<br>Ваши цветы <span class="highlight">не завянут.</span></h1>
+        <p>Профессиональная передержка растений на время вашего отпуска. Идеальный климат, полив и фотоотчеты в приложении.</p>
+        <div class="hero-actions">
+          <a href="#cta" class="btn btn-primary">Оставить заявку</a>
+          <span class="hero-note">Более 500 спасенных фикусов</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- Красивая картинка с растениями -->
+        <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=2071&auto=format&fit=crop" alt="Растения в горшках">
+      </div>
+    </div>
+  </section>
+
+  <!-- BENTO GRID (Преимущества) -->
+  <section class="section section-bg">
+    <div class="container">
+      <h2 class="section-title">Почему нам доверяют</h2>
+      <div class="bento-grid">
+        
+        <div class="bento-item bento-large">
+          <h3>Приложение с прямой трансляцией</h3>
+          <p>Не просто фото раз в неделю. Смотрите на свои цветы в прямом эфире 24/7 и следите за влажностью в горшке.</p>
+          <img class="bento-img" src="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=1000&auto=format&fit=crop" alt="Телефон с приложением">
+        </div>
+
+        <div class="bento-item bento-tall" style="background-color: var(--mint);">
+          <h3>Умный климат</h3>
+          <p>Фитолампы, датчики влажности и система туманообразования настроены под каждое растение.</p>
+        </div>
+
+        <div class="bento-item">
+          <h3>🚗 Трансфер</h3>
+          <p>Заберем ваши растения на своем транспорте.</p>
+        </div>
+
+        <div class="bento-item" style="background-color: var(--coral); color: #fff;">
+          <h3>Гарантия 100%</h3>
+          <p>Если с цветком что-то случится — мы возместим его стоимость.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ТАРИФЫ -->
+  <section class="section" id="prices">
+    <div class="container">
+      <h2 class="section-title">Форматы передержки</h2>
+      <div class="pricing-grid">
+        
+        <div class="price-box">
+          <div class="price-header">
+            <h3>Гостиница</h3>
+            <p>Посуточно</p>
+          </div>
+          <div class="price-value">300 ₽ <span>/ сутки</span></div>
+          <ul class="price-list">
+            <li>Идеальный микроклимат</li>
+            <li>Ручной полив</li>
+            <li>Фото раз в 3 дня</li>
+          </ul>
+          <a href="#cta" class="btn btn-outline">Выбрать</a>
+        </div>
+
+        <div class="price-box price-box-popular">
+          <div class="badge">Хит продаж</div>
+          <div class="price-header">
+            <h3>Выезд на дом</h3>
+            <p>Абонемент</p>
+          </div>
+          <div class="price-value">2 500 ₽ <span>/ месяц</span></div>
+          <ul class="price-list">
+            <li>4 визита специалиста</li>
+            <li>Полив и опрыскивание</li>
+            <li>Лечение от вредителей</li>
+            <li>Отчет в Telegram</li>
+          </ul>
+          <a href="#cta" class="btn btn-primary">Выбрать</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA ФОРМА -->
+  <section class="section section-dark" id="cta">
+    <div class="container cta-grid">
+      <div>
+        <h2>Забронируйте места для ваших растений</h2>
+        <p>Оставьте заявку, и мы пришлем вам подробную инструкцию, как подготовить цветы к переезду.</p>
+      </div>
+      <div>
+        <form class="form" id="lead-form">
+          <input type="text" name="name" placeholder="Ваше имя" required>
+          <input type="tel" name="phone" placeholder="Телефон" required>
+          <button type="submit" class="btn btn-primary btn-block">Забронировать</button>
+          <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности.</p>
+        </form>
+        <div id="success-message" class="success-message" style="display: none;">
+          <h3>🌿 Готово!</h3>
+          <p>Мы свяжемся с вами в ближайшие 15 минут.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 «Зелёная няня». Забота о зеленых друзьях.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
